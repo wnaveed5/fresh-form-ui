@@ -132,9 +132,10 @@ export default function Home() {
     <main className="min-h-screen bg-gray-50 flex items-center justify-center p-8">
       <div className="flex w-full max-w-sm flex-col gap-6">
         <Tabs defaultValue="account">
-          <TabsList>
+          <TabsList className="grid w-full grid-cols-3">
             <TabsTrigger value="account">Account</TabsTrigger>
             <TabsTrigger value="password">Password</TabsTrigger>
+            <TabsTrigger value="profile">Profile</TabsTrigger>
           </TabsList>
           <TabsContent value="account">
             <Card>
@@ -185,6 +186,33 @@ export default function Home() {
               </CardContent>
               <CardFooter>
                 <Button>Save password</Button>
+              </CardFooter>
+            </Card>
+          </TabsContent>
+          <TabsContent value="profile">
+            <Card>
+              <CardHeader>
+                <CardTitle>Profile</CardTitle>
+                <CardDescription>
+                  Manage your profile information and preferences.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="grid gap-6">
+                <div className="grid gap-3">
+                  <Label htmlFor="profile-bio">Bio</Label>
+                  <Input id="profile-bio" placeholder="Tell us about yourself" />
+                </div>
+                <div className="grid gap-3">
+                  <Label htmlFor="profile-location">Location</Label>
+                  <Input id="profile-location" placeholder="Where are you located?" />
+                </div>
+                <div className="grid gap-3">
+                  <Label htmlFor="profile-website">Website</Label>
+                  <Input id="profile-website" type="url" placeholder="https://your-website.com" />
+                </div>
+              </CardContent>
+              <CardFooter>
+                <Button>Update profile</Button>
               </CardFooter>
             </Card>
           </TabsContent>
